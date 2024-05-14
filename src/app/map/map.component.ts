@@ -1,18 +1,18 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { defineCustomElements } from '@arcgis/map-components/dist/loader';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+    selector: 'app-map',
+    templateUrl: './map.component.html',
+    styleUrl: './map.component.scss'
 })
-export class AppComponent implements OnInit {
-    title = 'map-testing';
+export class MapComponent implements OnInit {
+    title = "map-components-angular-template";
 
     constructor(
         @Inject(PLATFORM_ID) private platformId: Object
-    ) { }
+    ) {}
 
     arcgisViewReadyChange(event: any) {
         console.log("MapView ready", event);
